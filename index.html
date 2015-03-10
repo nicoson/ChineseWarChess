@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Chinese War Chess</title>
+
+	<!-- css library -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="public/css/style.css">
+	
+	<!-- framework & library -->
+	<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src="https://code.angularjs.org/1.3.14/angular-route.min.js"></script>
+</head>
+<body>
+	<div id="chessboard" class="container">
+		<div>
+			<table id="boardPaint">
+				<tbody>
+					<tr>
+						<td></td><td></td><td></td><td class="left"></td>
+						<td class="right"></td></td><td></td><td></td><td></td>
+					</tr>
+					<tr>
+						<td><div class="rightBottom"></div></td>
+						<td><div class="leftBottom"></div></td>
+						<td></td>
+						<td class="right"></td>
+						<td class="left"></td>
+						<td></td>
+						<td><div class="rightBottom"></div></td>
+						<td><div class="leftBottom"></div></td>
+					</tr>
+					<tr>
+						<td><div class="leftBottom"></div><div class="rightTop"></div></td>
+						<td><div class="rightBottom"></div><div class="leftTop"></div></td>
+						<td><div class="leftBottom"></div></td>
+						<td><div class="rightBottom"></div></td>
+						<td><div class="leftBottom"></div></td>
+						<td><div class="rightBottom"></div></td>
+						<td><div class="leftBottom"></div><div class="rightTop"></div></td>
+						<td><div class="rightBottom"></div><div class="leftTop"></div></td>
+					</tr>
+					<tr>
+						<td><div class="leftTop"></div></td>
+						<td><div class="rightTop"></div></td>
+						<td><div class="leftTop"></div></td>
+						<td><div class="rightTop"></div></td>
+						<td><div class="leftTop"></div></td>
+						<td><div class="rightTop"></div></td>
+						<td><div class="leftTop"></div></td>
+						<td><div class="rightTop"></div></td>
+					</tr>
+
+					<tr>
+						<td></td>
+						<td colspan="2">楚河</td>
+						<td colspan="2"></td>
+						<td colspan="2">漢界</td>
+						<td></td>
+					</tr>
+
+					<tr>
+						<td><div class="leftBottom"></div></td>
+						<td><div class="rightBottom"></div></td>
+						<td><div class="leftBottom"></div></td>
+						<td><div class="rightBottom"></div></td>
+						<td><div class="leftBottom"></div></td>
+						<td><div class="rightBottom"></div></td>
+						<td><div class="leftBottom"></div></td>
+						<td><div class="rightBottom"></div></td>
+					</tr>
+					<tr>
+						<td><div class="rightBottom"></div><div class="leftTop"></div></td>
+						<td><div class="leftBottom"></div><div class="rightTop"></div></td>
+						<td><div class="leftTop"></div></td>
+						<td><div class="rightTop"></div></td>
+						<td><div class="leftTop"></div></td>
+						<td><div class="rightTop"></div></td>
+						<td><div class="rightBottom"></div><div class="leftTop"></div></td>
+						<td><div class="leftBottom"></div><div class="rightTop"></div></td>
+					</tr>
+					<tr>
+						<td><div class="rightTop"></div></td>
+						<td><div class="leftTop"></div></td>
+						<td></td>
+						<td class="left"></td>
+						<td class="right"></td>
+						<td></td>
+						<td><div class="rightTop"></div></td>
+						<td><div class="leftTop"></div></td>
+					</tr>
+					<tr>
+						<td></td><td></td><td></td><td class="right"></td>
+						<td class="left"></td><td></td><td></td><td></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<table id="chessGrid">
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td>
+					<td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td>
+					<td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td>
+					<td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td>
+					<td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td>
+					<td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td>
+					<td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td>
+					<td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td>
+					<td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td>
+					<td></td><td></td><td></td><td></td>
+				</tr>
+				<tr>
+					<td></td><td></td><td></td><td></td><td></td>
+					<td></td><td></td><td></td><td></td>
+				</tr>
+			</table>
+			<!-- <div class="chessman"><div>帥</div></div> -->
+		</div>
+	</div>
+
+	<script src="public/js/action.js"></script>
+	<script src="public/js/core.js"></script>
+
+</body>
+</html>
