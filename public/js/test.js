@@ -274,15 +274,15 @@ function chess(chessgrid,color,pos){
 		
 		if(y-2>4){	//upper
 			if(x-2>-1){	//up-left
-				if(matrix[y-1][x-1]!=(this.position+1)){
-					if(matrix[y-2][x-2]!=1){
+				if(matrix[y-1][x-1]==0){
+					if(matrix[y-2][x-2]!=(this.position+1)){
 						availLattice.push([y-2,x-2]);
 					}
 				}
 			}
 			if(x+2<9){ //up-right
-				if(matrix[y-1][x+1]!=(this.position+1)){
-					if(matrix[y-2][x+2]!=1){
+				if(matrix[y-1][x+1]==0){
+					if(matrix[y-2][x+2]!=(this.position+1)){
 						availLattice.push([y-2,x+2]);
 					}
 				}
@@ -290,15 +290,15 @@ function chess(chessgrid,color,pos){
 		}
 		if(y+2<10){
 			if(x-2>-1){	//down-left
-				if(matrix[y+1][x-1]!=(this.position+1)){
-					if(matrix[y+2][x-2]!=1){
+				if(matrix[y+1][x-1]==0){
+					if(matrix[y+2][x-2]!=(this.position+1)){
 						availLattice.push([y+2,x-2]);
 					}
 				}
 			}
 			if(x+2<9){ //down-right
-				if(matrix[y+1][x+1]!=(this.position+1)){
-					if(matrix[y+2][x+2]!=1){
+				if(matrix[y+1][x+1]==0){
+					if(matrix[y+2][x+2]!=(this.position+1)){
 						availLattice.push([y+2,x+2]);
 					}
 				}
@@ -311,17 +311,17 @@ function chess(chessgrid,color,pos){
 	this.xiangUpAction = function(x,y,matrix){
 		var availLattice = [[y,x]];
 		
-		if(y-2>0){	//upper
+		if(y>0){	//upper
 			if(x-2>-1){	//up-left
-				if(matrix[y-1][x-1]!=(this.position+1)){
-					if(matrix[y-2][x-2]!=1){
+				if(matrix[y-1][x-1]==0){
+					if(matrix[y-2][x-2]!=(this.position+1)){
 						availLattice.push([y-2,x-2]);
 					}
 				}
 			}
 			if(x+2<9){ //up-right
-				if(matrix[y-1][x+1]!=(this.position+1)){
-					if(matrix[y-2][x+2]!=1){
+				if(matrix[y-1][x+1]==0){
+					if(matrix[y-2][x+2]!=(this.position+1)){
 						availLattice.push([y-2,x+2]);
 					}
 				}
@@ -329,15 +329,15 @@ function chess(chessgrid,color,pos){
 		}
 		if(y+2<5){
 			if(x-2>-1){	//down-left
-				if(matrix[y+1][x-1]!=(this.position+1)){
-					if(matrix[y+2][x-2]!=1){
+				if(matrix[y+1][x-1]==0){
+					if(matrix[y+2][x-2]!=(this.position+1)){
 						availLattice.push([y+2,x-2]);
 					}
 				}
 			}
 			if(x+2<9){ //down-right
-				if(matrix[y+1][x+1]!=(this.position+1)){
-					if(matrix[y+2][x+2]!=1){
+				if(matrix[y+1][x+1]==0){
+					if(matrix[y+2][x+2]!=(this.position+1)){
 						availLattice.push([y+2,x+2]);
 					}
 				}
@@ -474,9 +474,13 @@ function chess(chessgrid,color,pos){
 				availLattice.push([y, i]); 
 			}else{
 				for(j=i-1; j>-1; j--){
-					if(matrix[y][j] == (2-this.position)){
-						availLattice.push([y, j]); 
-						break;
+					if(matrix[y][j] != 0){
+						if(matrix[y][j] == (2-this.position)){
+							availLattice.push([y, j]); 
+							break;
+						}else{
+							break;
+						}
 					}
 				}
 				break;
@@ -487,9 +491,13 @@ function chess(chessgrid,color,pos){
 				availLattice.push([y, i]); 
 			}else{
 				for(j=i+1; j<9; j++){
-					if(matrix[y][j] == (2-this.position)){
-						availLattice.push([y, j]); 
-						break;
+					if(matrix[y][j] != 0){
+						if(matrix[y][j] == (2-this.position)){
+							availLattice.push([y, j]); 
+							break;
+						}else{
+							break;
+						}
 					}
 				}
 				break;
@@ -500,9 +508,13 @@ function chess(chessgrid,color,pos){
 				availLattice.push([j, x]); 
 			}else{
 				for(i=j-1; i>-1; i--){
-					if(matrix[i][x] == (2-this.position)){
-						availLattice.push([i, x]); 
-						break;
+					if(matrix[i][x] != 0){
+						if(matrix[i][x] == (2-this.position)){
+							availLattice.push([i, x]); 
+							break;
+						}else{
+							break;
+						}
 					}
 				}
 				break;
@@ -513,9 +525,13 @@ function chess(chessgrid,color,pos){
 				availLattice.push([j, x]); 
 			}else{
 				for(i=j+1; i<10; i++){
-					if(matrix[i][x] == (2-this.position)){
-						availLattice.push([i, x]); 
-						break;
+					if(matrix[i][x] != 0){
+						if(matrix[i][x] == (2-this.position)){
+							availLattice.push([i, x]); 
+							break;
+						}else{
+							break;
+						}
 					}
 				}
 				break;

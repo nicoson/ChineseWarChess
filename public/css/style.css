@@ -2,11 +2,41 @@
 	background: #d2bf9b;
 	padding: 50px;
 	width: 700px;
+	position: relative;
 }
 
 #chessboard>div{
 	width: 481px; /* =60*8 */
 	position: relative;
+	margin: 0 auto;
+}
+
+#chessboard>button{
+	position: absolute;
+	right: 10px;
+	top: 50%;
+}
+
+#chessboard>div.gameOver{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	display: none;
+}
+
+#chessboard>div.gameOver>div{
+	position: absolute;
+	padding: 10px;
+	text-align: center;
+	left: -150px;
+	top: -50px;
+	width: 300px;
+	height: 120px;
+	background: white;
+	border-radius: 5px;
+}
+
+#chessboard>div.gameOver>div>button{
 	margin: 0 auto;
 }
 
@@ -132,7 +162,7 @@
 #chessGrid td{
 	width: 60px;
 	height: 60px;
-	border: 1px solid green;
+/*	border: 1px solid green;*/
 	position: relative;
 	padding: 4px;
 }
